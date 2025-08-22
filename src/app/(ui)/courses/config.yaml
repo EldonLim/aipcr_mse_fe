@@ -1,0 +1,46 @@
+# Lyon CourseBuddy Chatbot Configuration
+
+# API Configuration
+api:
+  base_url: "https://generativelanguage.googleapis.com/v1"
+  model: "gemini-1.5-flash"
+  timeout: 5000
+  max_retries: 3
+
+# Chatbot Settings
+chatbot:
+  name: "Lyon CourseBuddy"
+  description: "AI assistant for Materials Science and Engineering courses"
+  welcome_message: "Welcome to Lyon CourseBuddy! I'm here to help you explore courses and find the perfect learning path."
+  
+# Course Data
+courses:
+  themes:
+    - materials_science
+    - engineering
+    - chemistry
+    - physics
+    - biotechnology
+    - nanotechnology
+  
+  difficulty_levels:
+    - beginner
+    - intermediate
+    - advanced
+
+# UI Configuration
+ui:
+  primary_color: "#010147"
+  secondary_color: "#020750"
+  accent_color: "#cfcfcf"
+  max_chat_history: 50
+  auto_scroll: true
+  
+# Features
+features:
+  local_responses: true
+  api_fallback: true
+  quick_replies: true
+  theme_browsing: true
+  course_search: true
+  career_guidance: true 

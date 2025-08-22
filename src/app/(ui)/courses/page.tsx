@@ -4,8 +4,8 @@ import { Typography, Container, Box } from '@mui/material';
 import { Course } from '../../interfaces/course';
 import { Courses } from '../../components/Courses';
 import Image from 'next/image';
-import { relative } from 'path';
 import { GlobalStyles } from '@mui/material';
+import { ChatbotPage } from '@/app/components/Chatbot';
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -116,6 +116,10 @@ export default async function CoursesPage() {
         
         </Container>
       </Box>
+      <Box sx={{ position: 'relative', zIndex: 2}}>
+        <ChatbotPage></ChatbotPage>
+      </Box>
+      
     </>
   );
 }
