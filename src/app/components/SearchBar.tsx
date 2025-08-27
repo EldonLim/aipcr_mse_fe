@@ -16,24 +16,24 @@ const SearchBar = ({ value, onChange, placeholder = 'Search courses...' }: Searc
       sx={{
         '& .MuiOutlinedInput-root': {
       height: '2.8rem',
-      backgroundColor: '#1c1c1e', // Dark charcoal background
+      backgroundColor: '#ffffff', // Dark charcoal background
       color: 'white',
       borderRadius: '0.5rem',
       '& fieldset': {
-        borderColor: '#333', // Subtle dark border
+        borderColor: '#e0e0e0', // Subtle dark border
       },
       '&:hover fieldset': {
-        borderColor: '#555', // Slightly lighter on hover
+        borderColor: '#bdbdbd', // Slightly lighter on hover
       },
       '&.Mui-focused fieldset': {
         borderColor: '#8b6b31', // Accent color on focus (matches your theme)
       },
     },
     '& .MuiInputAdornment-root': {
-      color: 'white', // Icon color
+      color: '#666666', // Icon color
     },
     input: {
-      color: 'white', // Input text color
+      color: '#333333', // Input text color
     },
   }}
       variant="outlined"

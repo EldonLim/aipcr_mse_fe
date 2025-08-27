@@ -74,7 +74,7 @@ export const Courses = ({ allCourses }: CoursesProps) => {
                     minHeight: '400px',
                     width: '100%'
                 }}>
-                    <Typography variant="h6" color="#b0b0b0">
+                    <Typography variant="h6" color="#666666">
                         No courses found
                     </Typography>
                 </Box>
@@ -119,12 +119,12 @@ export const Courses = ({ allCourses }: CoursesProps) => {
                                 showLastButton
                                 sx={{
                                     '& .MuiPaginationItem-root': {
-                                    color: 'white',
-                                    borderColor: 'white',
+                                    color: '#333333',
+                                    borderColor: '#e0e0e0',
                                     },
                                     '& .MuiPaginationItem-root.Mui-selected': {
-                                    backgroundColor: 'white',
-                                    color: 'black',
+                                    backgroundColor: '#8b6b31',
+                                    color: '#f5f5f5',
                                     },
                                 }}
                             />
