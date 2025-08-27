@@ -43,44 +43,45 @@ const CourseDetailsModal = ({ open, onClose, course }: CourseDetailsModalProps) 
     PaperProps={{
     sx: {
       borderRadius: 3,
-      backgroundColor: 'rgba(30,30,30,0.9)',  // Transparent dark
-      color: 'white',
-      backdropFilter: 'blur(6px)',
+      backgroundColor: '#ffffff',  
+      color: '#333333',
+      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
     }
   }}>
-      <DialogTitle ><strong>{course.course} {course.course_name}</strong></DialogTitle>
+      <DialogTitle sx={{ color: '#8b6b31', }} ><strong>{course.course} {course.course_name}</strong></DialogTitle>
       <DialogContent>
-        <Typography variant="body1" gutterBottom sx={{ color: '#dddddd' }}>
+        <Typography variant="body1" gutterBottom sx={{ color: '#333333' }}>
           <strong>Course Aim:</strong> {contentWithoutPreReq}
         </Typography>
 
-        <ul>
+        <ul style={{ paddingLeft: '20px' }}>
             {bulletItems.map((item, index) => (
             <li key={index}>
-                <Typography variant="body2" sx={{ color: '#cccccc' }}>{item}</Typography>
+                <Typography variant="body2" sx={{ color: '#333333' }}>{item}</Typography>
             </li>
             ))}
         </ul>
 
         {preRequisites && (
-            <Typography sx={{ mt: 2, color: '#cccccc' }}>
+            <Typography sx={{ mt: 2, color: '#333333' }}>
                 <strong>Pre-requisites:</strong> {preRequisites}
             </Typography>
             )}
 
-        <Typography sx={{ mt: 2, color: '#cccccc' }}>
+        <Typography sx={{ mt: 2, color: '#333333' }}>
             <strong>Themes:</strong> {course.themes.join(', ')}
         </Typography>
 
         <Stack direction="row" spacing={1} sx={{ my: 2 }} flexWrap="wrap">
-            <Typography sx={{ color: '#cccccc' }}>Tags: </Typography>
+            <Typography sx={{ color: '#333333' }}>Tags: </Typography>
           {course.tags.map((tag) => (
             <Chip key={tag} label={tag} variant="outlined" 
             sx={{
-            color: 'white',
-            borderColor: 'white',
+            color: '#8b6b31',
+            borderColor: '#8b6b31',
+            backgroundColor: '#f5f5f5',
             '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(139, 107, 49, 0.1)',
             },
           }}
 />
@@ -89,7 +90,13 @@ const CourseDetailsModal = ({ open, onClose, course }: CourseDetailsModalProps) 
 
         <Box sx={{ mt: 2 }}>
           <Link href={course.course_url} target="_blank" rel="noopener"
-          sx={{ fontWeight: 'bold' }}>
+          sx={{ 
+            fontWeight: 'bold' ,
+            color: '#1976d2',
+            '&:hover': {
+              color: '#115293',
+            }
+          }}>
             View Course Document (PDF)
           </Link>
         </Box>

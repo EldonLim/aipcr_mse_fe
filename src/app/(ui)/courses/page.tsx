@@ -4,8 +4,8 @@ import { Typography, Container, Box } from '@mui/material';
 import { Course } from '../../interfaces/course';
 import { Courses } from '../../components/Courses';
 import Image from 'next/image';
-import { relative } from 'path';
 import { GlobalStyles } from '@mui/material';
+import { ChatbotPage } from '@/app/components/Chatbot';
 
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,14 +38,14 @@ export default async function CoursesPage() {
   return (
     <>
       <GlobalStyles styles={{
-          html: { height: '100%', backgroundColor: '#0f0f0f' },
-          body: { height: '100%', margin: 0, backgroundColor: '#0f0f0f' },
-          '#__next': { minHeight: '100vh', backgroundColor: '#0f0f0f' },
+          html: { height: '100%', backgroundColor: '#ffffff' },
+          body: { height: '100%', margin: 0, backgroundColor: '#ffffff' },
+          '#__next': { minHeight: '100vh', backgroundColor: '#ffffff' },
         }} />
       <Box sx={{
           position: 'relative',
           minHeight: '135vh',
-          background: 'linear-gradient(135deg, #0f0f0f, #1e1e1e)',
+          background: 'linear-gradient(135deg, #ffffff, #ffffff)',
           overflow: 'hidden',
         }}>
         <Box sx={{
@@ -89,10 +89,10 @@ export default async function CoursesPage() {
               priority 
             />
           </Box>
-          <Typography variant="h4" fontWeight="bold" mb={3} sx={{ textAlign: 'center', color: 'white' }}>
-            AIPCR: Course Search System
+          <Typography variant="h4" fontWeight="bold" mb={3} sx={{ textAlign: 'center', color: 'black' }}>
+            MSE Course Finder
           </Typography>
-          <Typography variant='body1' mb={3} color='#b0b0b0'>
+          <Typography variant='body1' mb={3} color='#333333'>
             If you&apos;re new to materials science or just getting started, 
             we&apos;ve curated some beginner-friendly courses to help you begin 
             your journey. You can search for specific topics using the 
@@ -116,6 +116,10 @@ export default async function CoursesPage() {
         
         </Container>
       </Box>
+      <Box sx={{ position: 'relative', zIndex: 2}}>
+        <ChatbotPage></ChatbotPage>
+      </Box>
+      
     </>
   );
 }
