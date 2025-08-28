@@ -116,7 +116,10 @@ export const generateLocalResponse = (message: string, selectedCourse: any) => {
       const prerequisitesMatch = courseSummary.match(/Pre-requisites:\s*(.+?)(?:\n|$)/i);
       const prerequisites = prerequisitesMatch ? prerequisitesMatch[1].trim() : 'None specified';
       
-      return `**Prerequisites for ${selectedCourse.course_name}:**\n\n**Official Prerequisites:** ${prerequisites}`;
+      return `**📋 Prerequisites for ${selectedCourse.course_name}**\n\n**🔑 Official Requirements:**\n• 
+      ${prerequisites}\n\n**💡 What This Means:**\n• These are the minimum requirements to enroll\n• 
+      Contact academic advisors if you have questions\n• Some prerequisites may be waived with experience\n• 
+      We're here to help you succeed!`;
     }
 
     // Difficulty questions
@@ -124,7 +127,11 @@ export const generateLocalResponse = (message: string, selectedCourse: any) => {
         lowerMessage.includes("hard") || lowerMessage.includes("easy") || lowerMessage.includes("tough") ||
         lowerMessage.includes("simple") || lowerMessage.includes("complex") || lowerMessage.includes("advanced") ||
         lowerMessage.includes("beginner") || lowerMessage.includes("how difficult")) {
-      return `**${selectedCourse.course_name} Difficulty:**\n\n**Level:** ${selectedCourse.difficulty_level}\n**Score:** ${selectedCourse.difficulty?.toFixed(2)}\n**Relevance:** ${selectedCourse.relevance?.toFixed(2)}\n**Semesters:** ${selectedCourse.semesters}`;
+      return `**⚡ ${selectedCourse.course_name} - Difficulty Assessment**\n\n**📊 Course Level:**\n• **Difficulty:** ${selectedCourse.difficulty_level}\n• 
+      **Score:** ${selectedCourse.difficulty?.toFixed(2)}/5.0\n• **Relevance:** ${selectedCourse.relevance?.toFixed(2)}/5.0\n• **Duration:** ${selectedCourse.semesters} 
+      semester(s)\n\n**💡 What This Means:**\n• **Beginner:** Perfect for newcomers to the field\n• **Intermediate:** Builds on foundational knowledge\n• **Advanced:** 
+      Requires strong background and experience\n\n**🎯 Success Factors:**\n• Regular attendance and participation\n• Consistent study habits\n• Seeking help when needed\n• 
+      Forming study groups`;
     }
 
     // Content/learning questions
@@ -133,14 +140,26 @@ export const generateLocalResponse = (message: string, selectedCourse: any) => {
         lowerMessage.includes("syllabus") || lowerMessage.includes("overview") || lowerMessage.includes("about this course") ||
         lowerMessage.includes("tell me about") || lowerMessage.includes("what is") || lowerMessage.includes("describe") ||
         lowerMessage.includes("explain") || lowerMessage.includes("details") || lowerMessage.includes("information")) {
-      return `**${selectedCourse.course_name} Content:**\n\n${selectedCourse.course_description || selectedCourse.course_summary}\n\n**Keywords:** ${selectedCourse.keywords || 'N/A'}\n**Themes:** ${[selectedCourse.theme1, selectedCourse.theme2, selectedCourse.theme3].filter(t => t && t.trim() !== '').join(', ')}`;
+      return `**📚 ${selectedCourse.course_name} - Course Content**\n\n**📖 What You'll Learn:**\n
+      ${selectedCourse.course_description || selectedCourse.course_summary}\n\n**🎯 Key Topics 
+      Covered:**\n• **Keywords:** ${selectedCourse.keywords || 'N/A'}\n• **Themes:** 
+      ${[selectedCourse.theme1, selectedCourse.theme2, selectedCourse.theme3].filter(t => t && t.trim() !== '').join(', ')}\n\n**📊 
+      Course Structure:**\n• **Duration:** ${selectedCourse.semesters} semester(s)\n• **Difficulty:** ${selectedCourse.difficulty_level}\n• 
+      **Relevance:** ${selectedCourse.relevance?.toFixed(2)}/5.0\n\n**💡 Learning Outcomes:**\n• Understand fundamental concepts and principles\n• 
+      Apply knowledge to real-world problems\n• Develop practical skills and techniques\n• Prepare for advanced studies or careers`;
     }
 
     // Career questions
     if (lowerMessage.includes("career") || lowerMessage.includes("opportunities") || lowerMessage.includes("jobs") || 
         lowerMessage.includes("work") || lowerMessage.includes("employment") || lowerMessage.includes("professional") ||
         lowerMessage.includes("industry") || lowerMessage.includes("future") || lowerMessage.includes("after graduation")) {
-      return `**${selectedCourse.course_name} Career Info:**\n\n**Relevance Score:** ${selectedCourse.relevance?.toFixed(2)}\n**Top Topics:**\n• ${selectedCourse.top_topic_1 || 'N/A'} (${selectedCourse.top_topic_1_contribution?.toFixed(3)})\n• ${selectedCourse.top_topic_2 || 'N/A'} (${selectedCourse.top_topic_2_contribution?.toFixed(3)})\n• ${selectedCourse.top_topic_3 || 'N/A'} (${selectedCourse.top_topic_3_contribution?.toFixed(3)})\n\n**Themes:** ${[selectedCourse.theme1, selectedCourse.theme2, selectedCourse.theme3].filter(t => t && t.trim() !== '').join(', ')}`;
+      return `**🎯 ${selectedCourse.course_name} - Career Opportunities**\n\n**📊 Career Relevance:**\n• **Relevance Score:** 
+      ${selectedCourse.relevance?.toFixed(2)}/5.0\n• **Industry Demand:** High in current market\n• **Growth Potential:** Excellent 
+      career progression\n\n**🔬 Top Topics & Their Impact:**\n• **${selectedCourse.top_topic_1 || 'N/A'}** (${selectedCourse.top_topic_1_contribution?.toFixed(3)})\n• 
+      **${selectedCourse.top_topic_2 || 'N/A'}** (${selectedCourse.top_topic_2_contribution?.toFixed(3)})\n• **${selectedCourse.top_topic_3 || 'N/A'}** 
+      (${selectedCourse.top_topic_3_contribution?.toFixed(3)})\n\n**🏢 Industry Applications:**\n• **Themes:** ${[selectedCourse.theme1, selectedCourse.theme2, selectedCourse.theme3].filter(t => t && t.trim() !== '').join(', ')}\n• 
+      **Sectors:** Aerospace, Automotive, Electronics, Energy, Healthcare\n• **Roles:** Research, Development, Manufacturing, Quality Control\n\n**💡 Career Paths:**\n• Materials Scientist\n• 
+      Research Engineer\n• Process Engineer\n• Quality Control Specialist\n• Product Development Engineer`;
     }
 
     // General course questions when course is selected
@@ -198,7 +217,15 @@ export const generateLocalResponse = (message: string, selectedCourse: any) => {
   }
   
   // Default response for unrecognized questions
-  return "I can help with course information! Ask about:\n\n• **Course details** - descriptions, content, outcomes\n• **Prerequisites** - what you need to know\n• **Difficulty** - how challenging each course is\n• **Careers** - job opportunities\n\nWhat specific course or topic?";
+  return `**🚀 I can help with course information!**\n\n**📚 What I can tell 
+  you about:**\n• **Course Details** - descriptions, content, learning outcomes\n• 
+  **Prerequisites** - what you need to know before enrolling\n• **Difficulty** - 
+  how challenging each course is\n• **Career Paths** - job opportunities and 
+  industry applications\n• **Course Structure** - duration, themes, and assessment 
+  methods\n\n**💡 Try asking about:**\n• Specific course codes (e.g., "Tell me 
+  about MS7110")\n• Course themes and categories\n• Difficulty levels and 
+  prerequisites\n• Career opportunities and relevance\n• Course comparisons and 
+  recommendations\n\n**🎯 What specific course or topic interests you?**`;
 }; 
 
 export const findSimilarCourses = (selectedCourse: any) => {

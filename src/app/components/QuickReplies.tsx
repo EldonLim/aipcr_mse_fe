@@ -9,7 +9,7 @@ const QuickReplies: React.FC<QuickRepliesProps> = ({ onQuickReply }) => {
     "Tell me more about this course",
     "What are the prerequisites?",
     "How difficult is this course?",
-    "What career opportunities does this offer?"
+    "Relevance and Top Topics covered"
   ];
 
   return (
