@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AIPCR MSE NTU – AI-Powered Course Finder
 
-## Getting Started
+AIPCR MSE NTU is a **web platform** designed to help students explore the **Master’s modules offered by the School of Materials Science and Engineering (MSE) at Nanyang Technological University (NTU)**. The site serves as a **course finder**, providing a searchable list of courses with detailed descriptions, prerequisites, and academic information.  
 
-First, run the development server:
+It also includes an **AI-powered chatbot** to answer student queries related to courses, offering instant, interactive guidance.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project demonstrates building **user-friendly web applications** with integrated **conversational AI** and robust backend services.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 📚 **Course Finder** – Browse and search through Master’s modules with detailed course info.  
+- 🤖 **AI Chatbot** – Ask questions about courses and receive instant responses.  
+- 🗄️ **Database Integration** – PostgreSQL database for storing course and query data.  
+- ☁️ **Cloud Deployment** – Backend on AWS, frontend hosted on Vercel for fast and reliable access.  
+- 🐳 **Containerized Architecture** – Docker Compose for seamless development and deployment.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Frontend:**  
+- Next.js  
+- React  
+- MUI/css
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Backend:**  
+- Python (FastAPI)  
+- Docker Compose  
+- PostgreSQL  
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Cloud & Deployment:**  
+- Backend: AWS  
+- Frontend: Vercel  
